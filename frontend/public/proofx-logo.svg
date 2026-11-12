@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" fill="none">
+  <style>
+    .brand-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", sans-serif; font-weight: 700; font-size: 110px; letter-spacing: -2px; }
+    .brand-fill { fill: #0d1424; }
+    .brand-accent { fill: #00a87d; }
+    @media (prefers-color-scheme: dark) {
+      .brand-fill { fill: #ffffff; }
+    }
+  </style>
+  <g transform="translate(4, 24) scale(0.52)">
+    <path class="brand-fill" d="M 0 248 L 68 248 L 172 144 L 138 110 Z" />
+    <path class="brand-fill" d="M 0 44 L 68 44 L 272 248 L 204 248 Z" />
+    <path class="brand-accent" d="M 138 110 L 246 2 L 314 2 L 172 144 Z" />
+  </g>
+  <text x="186" y="132" class="brand-text brand-fill">ProofX</text>
+</svg>
+

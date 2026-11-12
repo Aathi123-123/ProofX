@@ -1,0 +1,83 @@
+{
+  "dataset_size": 10,
+  "seed": 42,
+  "investigation_purpose": "Identify instances of fraud and unauthorized access.",
+  "target_keywords": [
+    "fraud",
+    "embezzlement",
+    "insider",
+    "unauthorized"
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "EV-000001",
+      "filename": "EV-000001_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000002",
+      "filename": "EV-000002_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000003",
+      "filename": "EV-000003_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000004",
+      "filename": "EV-000004_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000005",
+      "filename": "EV-000005_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000006",
+      "filename": "EV-000006_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000007",
+      "filename": "EV-000007_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000008",
+      "filename": "EV-000008_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000009",
+      "filename": "EV-000009_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000010",
+      "filename": "EV-000010_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    }
+  ]
+}

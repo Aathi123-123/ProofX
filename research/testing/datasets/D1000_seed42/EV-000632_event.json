@@ -1,0 +1,13 @@
+{
+  "id": "EV-000632",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Bob Jones",
+    "email": "bob.jones@corporate.org",
+    "cc": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "EV-008821",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Charlie Brown",
+    "email": "bob.jones@corporate.org",
+    "cc": "5412758493021928"
+  }
+}

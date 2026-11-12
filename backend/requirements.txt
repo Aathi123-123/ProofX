@@ -1,0 +1,65 @@
+# Core framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# Database
+sqlalchemy==2.0.36
+alembic==1.14.0
+asyncpg==0.30.0
+aiosqlite==0.20.0
+psycopg2-binary==2.9.10
+
+# Authentication & Security
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+python-multipart==0.0.18
+bcrypt==4.2.1
+
+# HTTP client
+httpx==0.28.1
+
+# Cryptography
+cryptography==44.0.0
+
+# Evidence processing
+python-magic==0.4.27
+Pillow==11.0.0
+PyPDF2==3.0.1
+python-docx==1.1.2
+exifread==3.0.0
+
+# Merkle tree
+# (implemented from scratch using hashlib)
+
+# Blockchain
+web3==7.6.0
+
+# PII detection
+# (implemented with regex + deterministic rules)
+
+# Benchmarking
+psutil==6.1.0
+
+# Data / serialization
+python-dateutil==2.9.0.post0
+orjson==3.10.12
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.24.0
+pytest-cov==6.0.0
+httpx==0.28.1
+
+# Linting / type checking
+mypy==1.13.0
+ruff==0.8.3
+
+# Structured logging
+structlog==24.4.0
+
+# Utilities
+python-dotenv==1.0.1
+click==8.1.8
+rich==13.9.4

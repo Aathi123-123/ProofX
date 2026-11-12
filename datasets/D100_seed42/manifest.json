@@ -1,0 +1,713 @@
+{
+  "dataset_size": 100,
+  "seed": 42,
+  "investigation_purpose": "Identify instances of fraud and unauthorized access.",
+  "target_keywords": [
+    "fraud",
+    "embezzlement",
+    "insider",
+    "unauthorized"
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "EV-000001",
+      "filename": "EV-000001_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000002",
+      "filename": "EV-000002_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000003",
+      "filename": "EV-000003_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000004",
+      "filename": "EV-000004_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000005",
+      "filename": "EV-000005_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000006",
+      "filename": "EV-000006_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000007",
+      "filename": "EV-000007_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000008",
+      "filename": "EV-000008_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000009",
+      "filename": "EV-000009_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000010",
+      "filename": "EV-000010_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000011",
+      "filename": "EV-000011_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000012",
+      "filename": "EV-000012_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000013",
+      "filename": "EV-000013_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000014",
+      "filename": "EV-000014_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000015",
+      "filename": "EV-000015_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000016",
+      "filename": "EV-000016_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000017",
+      "filename": "EV-000017_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000018",
+      "filename": "EV-000018_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000019",
+      "filename": "EV-000019_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000020",
+      "filename": "EV-000020_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000021",
+      "filename": "EV-000021_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000022",
+      "filename": "EV-000022_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000023",
+      "filename": "EV-000023_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000024",
+      "filename": "EV-000024_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000025",
+      "filename": "EV-000025_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000026",
+      "filename": "EV-000026_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000027",
+      "filename": "EV-000027_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000028",
+      "filename": "EV-000028_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000029",
+      "filename": "EV-000029_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000030",
+      "filename": "EV-000030_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000031",
+      "filename": "EV-000031_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000032",
+      "filename": "EV-000032_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000033",
+      "filename": "EV-000033_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000034",
+      "filename": "EV-000034_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000035",
+      "filename": "EV-000035_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000036",
+      "filename": "EV-000036_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000037",
+      "filename": "EV-000037_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000038",
+      "filename": "EV-000038_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000039",
+      "filename": "EV-000039_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000040",
+      "filename": "EV-000040_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000041",
+      "filename": "EV-000041_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000042",
+      "filename": "EV-000042_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000043",
+      "filename": "EV-000043_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000044",
+      "filename": "EV-000044_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000045",
+      "filename": "EV-000045_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000046",
+      "filename": "EV-000046_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000047",
+      "filename": "EV-000047_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000048",
+      "filename": "EV-000048_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000049",
+      "filename": "EV-000049_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000050",
+      "filename": "EV-000050_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000051",
+      "filename": "EV-000051_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000052",
+      "filename": "EV-000052_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000053",
+      "filename": "EV-000053_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000054",
+      "filename": "EV-000054_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000055",
+      "filename": "EV-000055_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000056",
+      "filename": "EV-000056_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000057",
+      "filename": "EV-000057_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000058",
+      "filename": "EV-000058_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000059",
+      "filename": "EV-000059_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000060",
+      "filename": "EV-000060_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000061",
+      "filename": "EV-000061_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000062",
+      "filename": "EV-000062_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000063",
+      "filename": "EV-000063_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000064",
+      "filename": "EV-000064_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000065",
+      "filename": "EV-000065_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000066",
+      "filename": "EV-000066_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000067",
+      "filename": "EV-000067_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000068",
+      "filename": "EV-000068_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000069",
+      "filename": "EV-000069_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000070",
+      "filename": "EV-000070_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000071",
+      "filename": "EV-000071_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000072",
+      "filename": "EV-000072_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000073",
+      "filename": "EV-000073_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000074",
+      "filename": "EV-000074_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000075",
+      "filename": "EV-000075_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000076",
+      "filename": "EV-000076_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000077",
+      "filename": "EV-000077_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000078",
+      "filename": "EV-000078_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000079",
+      "filename": "EV-000079_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000080",
+      "filename": "EV-000080_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000081",
+      "filename": "EV-000081_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000082",
+      "filename": "EV-000082_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000083",
+      "filename": "EV-000083_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000084",
+      "filename": "EV-000084_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000085",
+      "filename": "EV-000085_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000086",
+      "filename": "EV-000086_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000087",
+      "filename": "EV-000087_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000088",
+      "filename": "EV-000088_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000089",
+      "filename": "EV-000089_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000090",
+      "filename": "EV-000090_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000091",
+      "filename": "EV-000091_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000092",
+      "filename": "EV-000092_event.json",
+      "mime_type": "application/json",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000093",
+      "filename": "EV-000093_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000094",
+      "filename": "EV-000094_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000095",
+      "filename": "EV-000095_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000096",
+      "filename": "EV-000096_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000097",
+      "filename": "EV-000097_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000098",
+      "filename": "EV-000098_syslog.txt",
+      "mime_type": "text/plain",
+      "ground_truth_sensitive": true,
+      "ground_truth_relevant": true
+    },
+    {
+      "artifact_id": "EV-000099",
+      "filename": "EV-000099_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    },
+    {
+      "artifact_id": "EV-000100",
+      "filename": "EV-000100_data.csv",
+      "mime_type": "text/csv",
+      "ground_truth_sensitive": false,
+      "ground_truth_relevant": false
+    }
+  ]
+}

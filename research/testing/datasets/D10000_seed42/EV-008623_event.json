@@ -1,0 +1,13 @@
+{
+  "id": "EV-008623",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Eve Hacker",
+    "email": "charlie.brown@school.edu",
+    "cc": null
+  }
+}

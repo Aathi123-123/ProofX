@@ -1,0 +1,13 @@
+{
+  "id": "EV-004327",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Diana Prince",
+    "email": "eve.hacker@evil.net",
+    "cc": null
+  }
+}

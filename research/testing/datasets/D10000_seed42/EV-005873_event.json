@@ -1,0 +1,14 @@
+{
+  "id": "EV-005873",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Bob Jones",
+    "email": "bob.jones@corporate.org",
+    "cc": "5412758493021928"
+  },
+  "notes": "Investigation relates to fraud"
+}

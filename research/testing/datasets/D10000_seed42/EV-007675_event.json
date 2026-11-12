@@ -1,0 +1,13 @@
+{
+  "id": "EV-007675",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Diana Prince",
+    "email": "alice.smith@example.com",
+    "cc": null
+  }
+}

@@ -1,0 +1,4 @@
+Log entry EV-000217
+Timestamp: 2026-10-12T21:17:33.061877+00:00
+Status: OK
+Keyword match: unauthorized

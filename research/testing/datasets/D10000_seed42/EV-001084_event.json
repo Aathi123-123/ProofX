@@ -1,0 +1,14 @@
+{
+  "id": "EV-001084",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Charlie Brown",
+    "email": "eve.hacker@evil.net",
+    "cc": null
+  },
+  "notes": "Investigation relates to fraud"
+}

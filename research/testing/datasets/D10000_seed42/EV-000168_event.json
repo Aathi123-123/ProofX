@@ -1,0 +1,13 @@
+{
+  "id": "EV-000168",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Diana Prince",
+    "email": "bob.jones@corporate.org",
+    "cc": null
+  }
+}

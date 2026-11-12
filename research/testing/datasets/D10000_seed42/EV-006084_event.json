@@ -1,0 +1,14 @@
+{
+  "id": "EV-006084",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Diana Prince",
+    "email": "charlie.brown@school.edu",
+    "cc": "5412758493021928"
+  },
+  "notes": "Investigation relates to embezzlement"
+}

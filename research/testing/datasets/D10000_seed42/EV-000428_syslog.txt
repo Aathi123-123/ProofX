@@ -1,0 +1,4 @@
+Log entry EV-000428
+Timestamp: 2026-10-12T21:17:51.437855+00:00
+Status: OK
+Keyword match: unauthorized

@@ -1,0 +1,13 @@
+{
+  "id": "EV-006227",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Bob Jones",
+    "email": "diana.prince@gov.org",
+    "cc": null
+  }
+}

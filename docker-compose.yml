@@ -1,0 +1,118 @@
+services:
+  # ── PostgreSQL ──────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: psde_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: psde_user
+      POSTGRES_PASSWORD: psde_password
+      POSTGRES_DB: psde_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - psde_postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U psde_user -d psde_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Hardhat Local Blockchain ─────────────────────────────────
+  hardhat:
+    build:
+      context: ./blockchain
+      dockerfile: ../docker/hardhat/Dockerfile
+    container_name: psde_hardhat
+    restart: unless-stopped
+    ports:
+      - "8545:8545"
+    volumes:
+      - ./blockchain:/app
+      - psde_hardhat_artifacts:/app/artifacts
+    command: npx hardhat node --hostname 0.0.0.0
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 8545 || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+
+  # Deploy the commitment contract after Hardhat is ready. Hardhat's local
+  # network assigns the deterministic address configured below.
+  blockchain-deploy:
+    build:
+      context: ./blockchain
+      dockerfile: ../docker/hardhat/Dockerfile
+    volumes:
+      - ./blockchain:/app
+    depends_on:
+      hardhat:
+        condition: service_healthy
+    command: npx hardhat run scripts/deploy.js --network docker
+    restart: "no"
+
+  # ── Backend (FastAPI) ─────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/backend/Dockerfile
+    container_name: psde_backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://psde_user:psde_password@postgres:5432/psde_db
+      BLOCKCHAIN_RPC_URL: http://hardhat:8545
+      APP_ENV: development
+      APP_SECRET_KEY: ${APP_SECRET_KEY:-dev_secret_change_in_production_please_rotate_1234}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-dev_jwt_secret_change_in_production_5678}
+      EVIDENCE_STORAGE_PATH: /app/evidence_store
+      BENCHMARK_OUTPUT_PATH: /app/benchmarks/results
+      BOOTSTRAP_ADMIN_EMAIL: ${BOOTSTRAP_ADMIN_EMAIL:-admin@psde.local}
+      BOOTSTRAP_ADMIN_PASSWORD: ${BOOTSTRAP_ADMIN_PASSWORD:-AdminPass123!}
+      COMMITMENT_CONTRACT_ADDRESS: ${COMMITMENT_CONTRACT_ADDRESS:-0x5FbDB2315678afecb367f032d93F642f64180aa3}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - psde_evidence_store:/app/evidence_store
+      - psde_benchmark_results:/app/benchmarks/results
+    depends_on:
+      postgres:
+        condition: service_healthy
+      hardhat:
+        condition: service_healthy
+      blockchain-deploy:
+        condition: service_completed_successfully
+    command: >
+      sh -c "alembic upgrade head && python -m app.core.bootstrap && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+
+  # ── Frontend (React/Vite) ──────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/frontend/Dockerfile
+    container_name: psde_frontend
+    restart: unless-stopped
+    environment:
+      VITE_API_BASE_URL: /api
+      VITE_API_PROXY_TARGET: http://backend:8000
+      VITE_APP_ENV: development
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    command: npm run dev -- --host 0.0.0.0
+
+volumes:
+  psde_postgres_data:
+  psde_hardhat_artifacts:
+  psde_evidence_store:
+  psde_benchmark_results:
+
+networks:
+  default:
+    name: psde_network

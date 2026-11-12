@@ -1,0 +1,13 @@
+{
+  "id": "EV-006434",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Eve Hacker",
+    "email": "alice.smith@example.com",
+    "cc": "4532019283746571"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "EV-001774",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Charlie Brown",
+    "email": "eve.hacker@evil.net",
+    "cc": "5412758493021928"
+  }
+}

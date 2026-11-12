@@ -1,0 +1,53 @@
+# Node & frontend dependencies
+node_modules/
+dist/
+build/
+.npm/
+
+# Python & backend environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/.venv/
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# PSDE local runtime & temporary stores
+.psde-runtime/
+backend/evidence_store/
+evidence_store/
+*.sqlite
+*.sqlite3
+*.db
+psde.db
+
+# Blockchain & Hardhat artifacts
+blockchain/artifacts/
+blockchain/cache/
+blockchain/node_modules/
+artifacts/
+cache/
+
+# Docker volumes & local data
+docker/postgres/data/
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment secrets (keep template .env.example)
+backend/.env
+.env
+!.env.example

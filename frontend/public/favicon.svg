@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
+  <style>
+    .proofx-base { fill: #0d1424; }
+    .proofx-accent { fill: #00a87d; }
+    @media (prefers-color-scheme: dark) {
+      .proofx-base { fill: #ffffff; }
+    }
+  </style>
+  <g transform="translate(22, 54)">
+    <path class="proofx-base" d="M 0 248 L 68 248 L 172 144 L 138 110 Z" />
+    <path class="proofx-base" d="M 0 44 L 68 44 L 272 248 L 204 248 Z" />
+    <path class="proofx-accent" d="M 138 110 L 246 2 L 314 2 L 172 144 Z" />
+  </g>
+</svg>
+

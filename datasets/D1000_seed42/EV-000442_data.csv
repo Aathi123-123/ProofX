@@ -1,0 +1,6 @@
+id,timestamp,value,note
+0,2026-10-09T03:18:22.308416,alice.smith@example.com,routine
+1,2026-10-09T03:18:22.308416,val_1,routine
+2,2026-10-09T03:18:22.308416,val_2,routine
+3,2026-10-09T03:18:22.308416,val_3,routine
+4,2026-10-09T03:18:22.308416,val_4,routine

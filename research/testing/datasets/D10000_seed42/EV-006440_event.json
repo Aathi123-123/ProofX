@@ -1,0 +1,13 @@
+{
+  "id": "EV-006440",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Alice Smith",
+    "email": "charlie.brown@school.edu",
+    "cc": "5412758493021928"
+  }
+}

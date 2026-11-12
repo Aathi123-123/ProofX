@@ -1,0 +1,14 @@
+{
+  "id": "EV-006489",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Diana Prince",
+    "email": "diana.prince@gov.org",
+    "cc": null
+  },
+  "notes": "Investigation relates to insider"
+}

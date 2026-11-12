@@ -1,0 +1,14 @@
+{
+  "id": "EV-004045",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  },
+  "user": {
+    "name": "Bob Jones",
+    "email": "eve.hacker@evil.net",
+    "cc": null
+  },
+  "notes": "Investigation relates to insider"
+}

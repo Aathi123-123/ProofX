@@ -1,0 +1,8 @@
+{
+  "id": "EV-008572",
+  "type": "event",
+  "metadata": {
+    "source": "app_server",
+    "version": "1.0"
+  }
+}
