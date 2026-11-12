@@ -70,6 +70,142 @@ files, volumes, or research results. Use the log files when a readiness check
 or migration fails. Run `.\scripts\start.ps1 -CheckOnly` to validate paths and
 resolved configuration without starting services.
 
+### Docker Deployment (Recommended)
+
+The easiest way to run the full PSDE stack is with Docker Compose, which spins
+up all five services in isolated containers with a single command.
+
+#### Prerequisites
+
+| Tool | Minimum Version | Check |
+|------|----------------|-------|
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/) | 24+ | `docker --version` |
+| [Docker Compose](https://docs.docker.com/compose/) | v2+ (bundled with Docker Desktop) | `docker compose version` |
+
+> [!NOTE]
+> On Windows, make sure **Docker Desktop** is running before proceeding.
+> WSL 2 backend is recommended for best performance.
+
+#### Architecture
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                     psde_network (bridge)                     │
+│                                                              │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐ │
+│  │ Frontend │  │ Backend  │  │ Hardhat  │  │  PostgreSQL  │ │
+│  │  (React) │→ │ (FastAPI)│→ │  (EVM)   │  │  (16-alpine) │ │
+│  │  :5173   │  │  :8000   │→ │  :8545   │  │    :5432     │ │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────────┘ │
+│                      │              ↑                         │
+│                      └──────────────┘                         │
+│                    blockchain-deploy                          │
+│                  (one-shot contract deploy)                   │
+└──────────────────────────────────────────────────────────────┘
+```
+
+#### Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Aathi123-123/ProofX.git
+cd ProofX
+
+# 2. (Optional) Create a .env file with custom secrets
+cat > .env << 'EOF'
+APP_SECRET_KEY=your_app_secret_key_here
+JWT_SECRET_KEY=your_jwt_secret_key_here
+BOOTSTRAP_ADMIN_EMAIL=admin@psde.local
+BOOTSTRAP_ADMIN_PASSWORD=AdminPass123!
+EOF
+
+# 3. Build and start all services
+docker compose up -d --build
+
+# 4. Check that everything is healthy
+docker compose ps
+```
+
+#### Services Overview
+
+| Service | Container | Port | Description |
+|---------|-----------|------|-------------|
+| **Frontend** | `psde_frontend` | `5173` | React + Vite dev server (proxies `/api` → backend) |
+| **Backend** | `psde_backend` | `8000` | FastAPI REST API with SQLAlchemy async |
+| **Hardhat** | `psde_hardhat` | `8545` | Local Ethereum blockchain node |
+| **blockchain-deploy** | — | — | One-shot: deploys `ForensicCommitment.sol`, then exits |
+| **PostgreSQL** | `psde_postgres` | `5432` | Persistent relational database |
+
+#### Accessing the Application
+
+| Resource | URL |
+|----------|-----|
+| 🌐 **Web UI** | [http://localhost:5173](http://localhost:5173) |
+| 📡 **API Docs** (Swagger) | [http://localhost:8000/docs](http://localhost:8000/docs) |
+| ❤️ **Health Check** | [http://localhost:8000/health](http://localhost:8000/health) |
+| ⛓️ **Blockchain RPC** | `http://localhost:8545` (JSON-RPC POST only) |
+
+**Default Admin Credentials (Docker):**
+- **Email:** `admin@psde.local`
+- **Password:** `AdminPass123!`
+
+> [!IMPORTANT]
+> Change the default admin credentials and secret keys in production by setting
+> the environment variables in your `.env` file.
+
+#### Container Volumes
+
+Persistent data is stored in named Docker volumes:
+
+| Volume | Purpose |
+|--------|---------|
+| `psde_postgres_data` | PostgreSQL database files |
+| `psde_hardhat_artifacts` | Compiled smart contract artifacts |
+| `psde_evidence_store` | Uploaded evidence files |
+| `psde_benchmark_results` | Benchmark output data |
+
+#### Common Docker Commands
+
+```bash
+# View logs for all services
+docker compose logs -f
+
+# View logs for a specific service
+docker compose logs -f backend
+
+# Stop all services (preserves data)
+docker compose down
+
+# Stop and remove all data (fresh start)
+docker compose down -v
+
+# Rebuild a specific service after code changes
+docker compose up -d --build backend
+
+# Check container health status
+docker compose ps
+
+# Open a shell inside the backend container
+docker exec -it psde_backend sh
+
+# Run database migrations manually
+docker exec -it psde_backend alembic upgrade head
+```
+
+#### Troubleshooting Docker
+
+| Issue | Solution |
+|-------|----------|
+| `port is already allocated` | Stop conflicting services: `scripts\stop.ps1` or change ports in `docker-compose.yml` |
+| Backend won't start | Check that `blockchain-deploy` completed: `docker compose logs blockchain-deploy` |
+| Database connection errors | Verify PostgreSQL is healthy: `docker compose ps postgres` |
+| Hardhat healthcheck failing | Wait 10-15s for node startup, then check: `docker compose logs hardhat` |
+| Fresh start needed | Run `docker compose down -v` to remove all volumes and start clean |
+
+---
+
+### Manual Setup (Without Docker)
+
 ### 1. Backend
 ```bash
 cd backend
